@@ -17,6 +17,8 @@
                     IsEnabled="false" />
 
             <TextBlock Text="Hello This is new Update" />
+            <TextBlock Background="yellow" 
+                       Text="A new color" />
             
         </StackPanel>
     </Grid>

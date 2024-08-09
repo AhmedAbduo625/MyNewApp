@@ -30,19 +30,27 @@ namespace MyNewApp
 
         private async void Button_Click(object sender, RoutedEventArgs e)
         {
-            manage = await UpdateManager.GitHubUpdateManager(@"https://github.com/AhmedAbduo625/MyNewApp");
-
-            var updateInfo = await manage.CheckForUpdate();
-
-            if (updateInfo.ReleasesToApply.Count > 0)
+            try
             {
-                MessageBox.Show("New Release is available");
-                UpdateBtn.IsEnabled = true;
+                manage = await UpdateManager.GitHubUpdateManager(@"https://github.com/AhmedAbduo625/MyNewApp");
+
+                var updateInfo = await manage.CheckForUpdate();
+
+                if (updateInfo.ReleasesToApply.Count > 0)
+                {
+                    MessageBox.Show("New Release is available");
+                    UpdateBtn.IsEnabled = true;
+                }
+                else
+                {
+                    MessageBox.Show("No Release available");
+                }
             }
-            else
+            catch(Exception ex)
             {
-                MessageBox.Show("No Release available");
+                MessageBox.Show(ex.Message);
             }
+            
         }
 
         private async void Button_Click_1(object sender, RoutedEventArgs e)
