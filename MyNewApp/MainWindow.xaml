@@ -15,6 +15,9 @@
                     x:Name="UpdateBtn"
                     Click="Button_Click_1"
                     IsEnabled="false" />
+
+            <TextBlock Text="Hello This is new Update" />
+            
         </StackPanel>
     </Grid>
 </Window>
