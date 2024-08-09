@@ -25,14 +25,14 @@ namespace MyNewApp
 
         public MainWindow()
         {
-            InitializeComponent();
+            InitializeComponent();            
         }
 
         private async void Button_Click(object sender, RoutedEventArgs e)
         {
             try
             {
-                manage = await UpdateManager.GitHubUpdateManager(@"https://github.com/AhmedAbduo625/MyNewApp");
+                
 
                 var updateInfo = await manage.CheckForUpdate();
 
@@ -59,5 +59,18 @@ namespace MyNewApp
             MessageBox.Show("Updated Successfully");
         }
 
+        private async void Window_Loaded(object sender, RoutedEventArgs e)
+        {
+            try
+            {
+                manage = await UpdateManager.GitHubUpdateManager(@"https://github.com/AhmedAbduo625/MyNewApp");
+                CheckBtn.IsEnabled = true;
+            }
+            catch(Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+            
+        }
     }
 }

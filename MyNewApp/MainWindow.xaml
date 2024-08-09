@@ -5,12 +5,19 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:MyNewApp"
         mc:Ignorable="d"
+        Loaded="Window_Loaded"
         Title="MainWindow" Height="450" Width="800">
+    
     <Grid>
+        
         <StackPanel Margin="20">
+            
             <Button Content="Check"
                     Click="Button_Click"
-                    Margin="0 0 0 20" />
+                    x:Name="CheckBtn"
+                    Margin="0 0 0 20" 
+                    IsEnabled="False"/>
+            
             <Button Content="Update"
                     x:Name="UpdateBtn"
                     Click="Button_Click_1"
@@ -19,7 +26,10 @@
             <TextBlock Text="Hello This is new Update" />
             <TextBlock Background="yellow" 
                        Text="A new color" />
-            
+            <TextBlock Background="red"
+                       Text="A new red feature" />
+
         </StackPanel>
     </Grid>
+    
 </Window>
