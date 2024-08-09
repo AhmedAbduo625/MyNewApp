@@ -29,6 +29,9 @@
             <TextBlock Background="red"
                        Text="A new red feature" />
 
+            <TextBlock Background="green"
+                       Text="A new red feature" />
+
         </StackPanel>
     </Grid>
     
